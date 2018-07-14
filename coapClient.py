@@ -8,13 +8,14 @@ logging.basicConfig(level=logging.INFO)
 async def main():
     protocol = await Context.create_client_context()
 
-    request = Message(code=FETCH)
+    request = Message(code=GET)
     # request.set_request_uri(uri='coap://example.com/c/RFw', set_uri_host=False)
 
     request.opt.uri_host=('example.com')
-    request.opt.uri_path=('c','RFy')
-    request.unresolved_remote = '[bbbb::2]:5683'
-    request.opt.content_format = 60
+    request.opt.uri_path=('c','RFw')
+    request.unresolved_remote = '[bbbb::2]:5683' #f-interop address
+    request.opt.content_format = 60 #application-cbor
+
     try:
         response = await protocol.request(request).response
     except Exception as e:
