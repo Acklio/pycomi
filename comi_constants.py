@@ -33,7 +33,7 @@ EXAMPLE_YANG_MAP = {
         "active": "act",
         "interface-name": "Loopback0",
         "description": "PRIMARY ROUTER LOOPBACK",
-        "Cisco-IOS-XR-ipv4-io-cfg:ipv4-network": {
+        "ipv4-network": {
           "addresses": {
             "primary": {
               "address": "172.16.255.1",
