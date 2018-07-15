@@ -22,10 +22,8 @@ interface_configuration.ipv4_network.addresses.primary.netmask = "255.255.255.25
 # Append the list instance to the parent list
 interface_configurations.interface_configuration.append(interface_configuration)
 
-# TODO: fill out
 EXAMPLE_YANG_OBJECT = interface_configurations
 
-# TODO: fix to fit our test case
 EXAMPLE_YANG_MAP = {
   "Cisco-IOS-XR-ifmgr-cfg:interface-configurations": {
     "interface-configuration": [
@@ -33,14 +31,14 @@ EXAMPLE_YANG_MAP = {
         "active": "act",
         "interface-name": "Loopback0",
         "description": "PRIMARY ROUTER LOOPBACK",
-        "Cisco-IOS-XR-ipv4-io-cfg:ipv4-network": {
-          "addresses": {
-            "primary": {
-              "address": "172.16.255.1",
-              "netmask": "255.255.255.255"
-            }
-          }
-        }
+        # "ipv4-network": {
+        #   "addresses": {
+        #     "primary": {
+        #       "address": "172.16.255.1",
+        #       "netmask": "255.255.255.255"
+        #     }
+        #   }
+        # }
       }
     ]
   }
@@ -48,7 +46,26 @@ EXAMPLE_YANG_MAP = {
 
 # TODO: implement
 EXAMPLE_CBOR_MAP_NO_DELTA = {
-
+  7003: {
+    7004: [
+      {
+        7005: "act",
+        7019: "Loopback0",
+        7014: "PRIMARY ROUTER LOOPBACK"
+        # "7005": {
+        #   "7006": {
+        #     "7007": {
+        #       "7008": "172.16.255.1",
+        #       "7009": "255.255.255.255"
+        #     }
+        #   }
+        # }
+      }
+    ]
+  }
 }
 
+EXAMPLE_YANG_SID_MAP = {
+    
+}
 
